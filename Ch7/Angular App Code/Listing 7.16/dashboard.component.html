@@ -1,0 +1,50 @@
+<table border="1" style="border-color: black; border-collapse: collapse; margin-left: 35%"> 
+        <thead>  
+          <tr>  
+            <th>StockId</th>  
+            <th>Stock Name</th>  
+            <th>Buy Price</th>  
+            <th>Qty</th>  
+            <th>TotalInvested</th>
+            <th>CurrentValue</th>
+            <th>TotalGain</th>  
+          </tr>  
+        </thead>  
+        <tbody>  
+          <tr *ngFor="let stock of PortfolioStocks">  
+            <td class="hidden">{{stock.StockId}}</td>  
+            <td>{{stock.StockName}}</td>  
+            <td>{{stock.BuyPrice}}</td>  
+            <td>{{stock.Qty}}</td>  
+            <td>{{stock.TotalInvested}}</td>  
+            <td>{{stock.CurrentValue}}</td>  
+            <td>{{stock.TotalGain}}</td>  
+          </tr>  
+        </tbody>  
+      </table>  
+  
+    <div>
+        <input style="margin-left: 45%; margin-bottom: 10px;" type="button" id="btnProffitLoss" value="Dashboard Chart"
+            (click)="GetProffitLossChart()" />
+    </div>
+    <table border="1" style="width: 100%; color: black; border-color: black; border-collapse: collapse;">
+      <tr>
+            <td style="width: 50%">
+            <div class="containerProffitLoss" id="containerProffitLoss" role="main">
+              </div>
+        </td>
+        <td>
+            <div class="topGainerChart" id="topGainerChart" role="main">
+              </div>
+        </td>
+      </tr>
+      <tr>
+          <td>
+             &nbsp;
+          </td>
+          <td>
+              <div class="topLooserChart" id="topLooserChart" role="main">
+                </div>
+          </td>
+        </tr>
+    </table>

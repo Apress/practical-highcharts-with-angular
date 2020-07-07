@@ -1,0 +1,53 @@
+
+
+<form [formGroup]="addForm" novalidate class="form">
+<div>
+    <hr/>
+  <table>
+    <tr>
+      <td>
+        Select Stock*
+      </td>
+      <td>
+          <select  class="form-control"  formControlName="Stock"  [(ngModel)]="SelStockId">  
+              <option *ngFor="let Stock of Stocks" value={{Stock.StockId}}>  
+                  {{Stock.StockName}}  
+              </option>  
+        </select> 
+      </td>
+      <td>
+        Period*
+      </td>
+      <td>
+          <select  class="form-control"  formControlName="Period"  [(ngModel)]="SelPeriodId">  
+              <option selected value="daily">Daily</option>  
+              <option value="monthly">Monthly</option>  
+          </select>  
+      </td>
+      <td>
+        Start Date*
+      </td>
+      <td>
+          <input type="date" id="txtStartDate" formControlName="StartDate" [(ngModel)]="start"/>
+      </td>
+      <td>
+        End Date*
+      </td>
+      <td>
+          <input type="date" id="txtEndDate" formControlName="EndDate" [(ngModel)]="end"/>
+      </td>
+      <td>
+          <input type="button" id="btnAdd" value="Search" (click)="onSubmit()"/> 
+      </td>
+    </tr>
+  </table>
+  <hr/>
+</div>
+
+<div class="content" id="container" role="main">
+</div>
+
+</form>
+
+<router-outlet></router-outlet>
+
