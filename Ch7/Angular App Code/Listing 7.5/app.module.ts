@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HighchartsChartComponent } from 'highcharts-angular';
+import { HighchartsChartModule  } from 'highcharts-angular';
 import {RouterModule} from '@angular/router'
 import { ReactiveFormsModule } from "@angular/forms";
 import { StockComponent } from './stock/stock.component';
@@ -13,7 +13,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 @NgModule({
   declarations: [
     AppComponent,
-    HighchartsChartComponent,
     StockComponent,
     AddstockComponent,
     DashboardComponent,
@@ -22,6 +21,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
+    HighchartsChartModule,
     ReactiveFormsModule,   
     RouterModule.forRoot([
       { path: 'stock', component: StockComponent },
